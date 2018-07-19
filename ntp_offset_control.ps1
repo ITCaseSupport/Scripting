@@ -262,7 +262,7 @@ Function Get-NtpTime {
         }
         else
         {
-        opcmsg a=Offset o=Offset severity=Critical msg_text=" $servername sunucusunda NTP Offset senkronizasyonunda problem var. Sistem Muhendislerine bilgi veriniz !!! " node="$servername"
+        opcmsg a=Offset o=Offset severity=Critical msg_text=" $servername NTP Offset Problem " node="$servername"
         echo $null >> $path_ntp
         }
      }
@@ -270,7 +270,7 @@ Function Get-NtpTime {
      {
         if (Test-Path $path_ntp) 
         {
-        opcmsg a=Offset o=Offset severity=Normal msg_text=" $servername sunucusunda NTP Offset senkronizasyonu Normal !!! " node="$servername"
+        opcmsg a=Offset o=Offset severity=Normal msg_text=" $servername NTP offset Fixed !!! " node="$servername"
         del $path_ntp
         }
 
